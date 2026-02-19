@@ -21,9 +21,19 @@ a {
   transition: 0.2s;
 }
 
+
+a:visited {
+  color: #00F5D4; 
+}
+
+a:active {
+  color: #FFFFFF; 
+}
+
 a:hover {
   color: #FF3D81;
 }
+
 
 .divider {
   height: 2px;
@@ -47,13 +57,6 @@ a:hover {
   height: auto;
 }
 
-.my-major figure{
-  margin: 0;
-}
-
-.intro figure{
-  margin: 0;
-}
 
 h1{
   font-size: 3em;
