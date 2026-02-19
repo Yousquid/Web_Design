@@ -1,0 +1,76 @@
+@font-face {
+  font-family: "Quantico";
+  src: url("../fonts/Quantico-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body{
+    background-color: #0E0F13;
+    font-family:"Quantico";
+    color: #E6EAF2;
+    margin: 0;
+    padding: 40px 20%;
+    
+}
+
+a {
+  text-decoration: none;
+  color: #00F5D4;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: #FF3D81;
+}
+
+.divider {
+  height: 2px;
+  background-color: #E6EAF2;
+  margin: 20px 0 20px 0; 
+}
+
+.intro {
+  display: flex;
+  align-items:center;   
+  gap: 30px;             
+}
+
+.intro img {
+  width: 300px;
+  height: auto;
+}
+
+.my-major img{
+   width: 200px;
+  height: auto;
+}
+
+.my-major figure{
+  margin: 0;
+}
+
+.intro figure{
+  margin: 0;
+}
+
+h1{
+  font-size: 3em;
+}
+
+h2{
+  font-size: 2em;
+}
+
+p{
+  font-size: 1.2em;
+}
+
+#hi-word{
+  font-size: 3em;
+}
+
+figure{
+  margin: 0;
+}
