@@ -13,3 +13,20 @@ img {
   height: 40vh;    
   width: auto;     
 }
+
+
+svg{
+  fill: white;
+  width: 20%;
+  height: auto;
+  padding: 0;
+  
+}
+
+.logo:hover svg{
+  fill: #00F5D4;
+}
+
+.logo:active svg{
+  fill: #FF3D81;
+}
