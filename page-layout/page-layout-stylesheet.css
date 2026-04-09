@@ -64,7 +64,6 @@ footer {
     margin-inline: auto;
 }
 
-/* Mobile-first header */
 
 header {
     margin-top: 1rem;
@@ -118,7 +117,6 @@ header nav h2 {
     font-weight: 700;
 }
 
-/* Main: default single column */
 
 main {
     margin-top: clamp(2rem, 6vw, 5rem);
@@ -209,7 +207,6 @@ footer {
     font-weight: 700;
 }
 
-/* Media query 1: wider screens */
 
 @media (min-width: 48rem) {
     .other-page-nav-pictures {
@@ -221,7 +218,6 @@ footer {
     }
 }
 
-/* Media query 2: desktop multi-column grid */
 
 @media (min-width: 64rem) {
     .basic-information article {
@@ -239,7 +235,6 @@ footer {
     }
 }
 
-/* Media query 3: user's preferred color scheme */
 
 @media (prefers-color-scheme: dark) {
     :root {
