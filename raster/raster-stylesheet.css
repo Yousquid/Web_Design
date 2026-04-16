@@ -30,3 +30,7 @@ svg{
 .logo:active svg{
   fill: #FF3D81;
 }
+
+#random-image {
+    position: absolute;
+}
