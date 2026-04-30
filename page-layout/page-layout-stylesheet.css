@@ -251,3 +251,54 @@ footer {
         color: var(--text-color);
     }
 }
+
+.interaction-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.interaction-controls button {
+    border: 0;
+    border-radius: 999px;
+    padding: 0.75rem 1rem;
+    font: inherit;
+    background-color: #111111;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+.interaction-controls button:hover,
+.interaction-controls button:focus-visible {
+    background-color: #444444;
+    transform: translateY(-2px);
+}
+
+.building-analysis-sketch.is-highlighted img {
+    box-shadow: 0 0 0 0.35rem rgba(190, 153, 78, 0.45);
+    transform: scale(1.02);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.building-analysis-text.is-emphasized {
+    background-color: #f4ead7;
+    transition: background-color 0.2s;
+}
+
+@media (prefers-color-scheme: dark) {
+    .interaction-controls button {
+        background-color: #f2f2f2;
+        color: #111111;
+    }
+
+    .interaction-controls button:hover,
+    .interaction-controls button:focus-visible {
+        background-color: #d8d8d8;
+    }
+
+    .building-analysis-text.is-emphasized {
+        background-color: #2b2418;
+    }
+}

@@ -47,10 +47,17 @@
 
         <section class="building-analysis">
             <article>
-                <div class="building-analysis-sketch">
+                <div class="building-analysis-sketch" id="analysis-sketch-box">
                     <h3>Building Analysis &amp; Sketch</h3>
+
+                    <div class="interaction-controls">
+                        <button type="button" id="summary-button">Show Quick Summary</button>
+                        <button type="button" id="reset-button">Show Full Analysis</button>
+                    </div>
+
                     <figure>
                         <img
+                            id="analysis-image"
                             src="colonnade-row-sketch.png"
                             srcset="
                                 colonnade-row-sketch.png 800w,
@@ -61,8 +68,8 @@
                     </figure>
                 </div>
 
-                <div class="building-analysis-text">
-                    <p>
+                <div class="building-analysis-text" id="analysis-text-box">
+                    <p id="analysis-text-main">
                         Let’s get to the façade of Colonnade Row. The most observable feature of this building is its Corinthian orders: 13 columns with leaf-like capitals, bases, and fluting equally divide the space of the façade proportionally and rhythmically. Besides, the entablature and frieze are on top of the columns, fulfilling the structure of the orders. However, on its façade, there is no pediment. Behind the columns is the wall and the windows on two different floors. Under the columns, there is still one first floor. The outside wall of the first floor still follows the vertical rhythms of the columns and windows. Even though these columns are the most important elements of Colonnade Row, Colonnade Row uses walls to carry the weight rather than the columns, and these Greek elements are just decorations outside on its façade. Also, the façade of Colonnade Row was built in an ancient Greek Temple style, but it was actually built as houses for people to live.
                     </p>
                     <p>
@@ -111,5 +118,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="colonnade-row-script.js"></script>
 </body>
 </html>

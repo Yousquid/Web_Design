@@ -47,10 +47,17 @@
 
         <section class="building-analysis">
             <article>
-                <div class="building-analysis-sketch">
+                <div class="building-analysis-sketch" id="analysis-sketch-box">
                     <h3>Building Analysis &amp; Sketch</h3>
+
+                    <div class="interaction-controls">
+                        <button type="button" id="summary-button">Show Quick Summary</button>
+                        <button type="button" id="reset-button">Show Full Analysis</button>
+                    </div>
+
                     <figure>
                         <img
+                            id="analysis-image"
                             src="federal-hall-sketch.png"
                             srcset="
                                 federal-hall-sketch.png 800w,
@@ -61,8 +68,8 @@
                     </figure>
                 </div>
 
-                <div class="building-analysis-text">
-                    <p>
+                <div class="building-analysis-text" id="analysis-text-box">
+                    <p id="analysis-text-main">
                         The façade presents the classic Doric Temple type – first, 8 columns are built with mostly un-decorative capitals; second, 8 columns seem relatively masculine because of the ratio between the column’s height and the entablature’s width; third, the pediment and entablature are also un-decorative; fourth, the positions and orders of the triglyphs and metopes on the frieze alternate correctly making that the triglyphs are positioning on the top of the columns; and fifth, the columns are directly on the top of stylobate without bases. However, there are indeed some parts of The Federal Hall National Memorial that are not very “classical”: the ratio between the number of columns in the façade and the number of columns in the side is not the classical “2n + 1” of the Parthenon because it has 8 columns on the façade but it has only 15 columns on the side.
                     </p>
                     <p>
@@ -108,5 +115,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="federal-hall-script.js"></script>
 </body>
 </html>
