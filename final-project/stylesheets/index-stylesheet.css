@@ -241,3 +241,58 @@ footer {
         --surface-color: #e4e0d8;
     }
 }
+
+.color-mode-toggle {
+    display: block;
+    width: fit-content;
+    margin: 0;
+    padding: 0.75rem 1.25rem;
+    border: 0.125rem solid var(--accent-color);
+    border-radius: 999px;
+    background-color: transparent;
+    color: var(--accent-color);
+    font-family: inherit;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.color-mode-toggle:hover,
+.color-mode-toggle:focus-visible {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    transform: translateY(-2px);
+}
+
+/* Explicit theme classes controlled by JavaScript */
+
+body.theme-dark {
+    --background-color: #282828;
+    --text-color: #f4f4f4;
+    --accent-color: #31d8c6;
+    --link-hover-color: #ff5c9b;
+    --surface-color: #333333;
+}
+
+body.theme-light {
+    --background-color: #f4f1ec;
+    --text-color: #1d1d1d;
+    --accent-color: #00796f;
+    --link-hover-color: #b0004f;
+    --surface-color: #e4e0d8;
+}
+
+.site-header {
+    width: var(--page-width);
+    margin: 2rem auto clamp(2rem, 5vw, 4rem);
+}
+
+.site-header h1 {
+    width: auto;
+    margin: 0 0 1.5rem;
+    text-align: left;
+}
+
+h1 {
+    font-size: clamp(2rem, 6vw, 4.5rem);
+}
