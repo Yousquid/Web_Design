@@ -1,3 +1,243 @@
-body{
+.quantico-regular {
+  font-family: "Quantico", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
+.quantico-bold {
+  font-family: "Quantico", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.quantico-regular-italic {
+  font-family: "Quantico", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.quantico-bold-italic {
+  font-family: "Quantico", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+:root {
+    --background-color: #282828;
+    --text-color: #f4f4f4;
+    --accent-color: #31d8c6;
+    --link-hover-color: #ff5c9b;
+    --surface-color: #333333;
+
+    --page-width: min(100% - 2rem, 90rem);
+    --section-gap: clamp(4rem, 10vw, 9rem);
+    --card-gap: clamp(1rem, 3vw, 2rem);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: "Quantico", Arial, sans-serif;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    line-height: 1.15;
+}
+
+h1 {
+    width: var(--page-width);
+    margin: 2rem auto 1rem;
+    font-size: clamp(2rem, 6vw, 4.5rem);
+}
+
+h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+p,
+li {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.18em;
+}
+
+a:visited {
+    color: var(--accent-color);
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--link-hover-color);
+}
+
+main,
+footer {
+    width: var(--page-width);
+    margin-inline: auto;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--section-gap);
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-block: 1rem 2rem;
+}
+
+.navigation h2,
+.navigation p {
+    margin: 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+figure {
+    margin: 0;
+}
+
+/* Mobile-first: one column */
+.game-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+
+.game-card figure {
+    overflow: hidden;
+    background-color: var(--surface-color);
+}
+
+.game-card img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.game-card h2 {
+    margin: 0;
+    text-align: center;
+    font-size: clamp(1.35rem, 4vw, 1.8rem);
+}
+
+.game-card article {
+    margin-top: 0.75rem;
+}
+
+.game-card article p {
+    margin: 0 0 0.35rem;
+}
+
+.game-page-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+}
+
+footer {
+    margin-top: clamp(4rem, 8vw, 7rem);
+    padding-bottom: 3rem;
+}
+
+.logo svg {
+    width: clamp(4rem, 10vw, 8rem);
+    height: auto;
+    fill: var(--text-color);
+}
+
+.logo:hover svg {
+    fill: var(--accent-color);
+}
+
+/* Tablet and desktop: wider navigation */
+@media (min-width: 48rem) {
+    .navigation {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 1rem 2rem;
+    }
+
+    .navigation h2 {
+        flex-basis: 100%;
+    }
+}
+
+/* Desktop: image + text side by side */
+@media (min-width: 64rem) {
+    main {
+        gap: clamp(5rem, 9vw, 8rem);
+    }
+
+    .game-card {
+        grid-template-columns: minmax(20rem, 1.15fr) minmax(20rem, 1fr);
+        grid-template-areas:
+            "media content"
+            "title content";
+        column-gap: clamp(2rem, 5vw, 5rem);
+        row-gap: 0.75rem;
+        align-items: start;
+    }
+
+    .game-card figure {
+        grid-area: media;
+    }
+
+    .game-card h2 {
+        grid-area: title;
+        text-align: center;
+    }
+
+    .game-card article {
+        grid-area: content;
+        margin-top: 0;
+        align-self: start;
+    }
+
+    .game-card article p {
+        font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    }
+
+    .game-page-link {
+        font-size: clamp(2rem, 3vw, 3rem);
+    }
+}
+
+/* Preferred color scheme */
+@media (prefers-color-scheme: light) {
+    :root {
+        --background-color: #f4f1ec;
+        --text-color: #1d1d1d;
+        --accent-color: #00796f;
+        --link-hover-color: #b0004f;
+        --surface-color: #e4e0d8;
+    }
 }
