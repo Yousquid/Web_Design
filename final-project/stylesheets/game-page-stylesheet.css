@@ -1,0 +1,280 @@
+
+
+:root {
+    --background-color: #282828;
+    --text-color: #f4f4f4;
+    --accent-color: #31d8c6;
+    --link-hover-color: #ff5c9b;
+    --surface-color: #333333;
+    --border-color: rgba(244, 244, 244, 0.18);
+
+    --page-width: min(100% - 2rem, 80rem);
+    --section-gap: clamp(2.5rem, 7vw, 6rem);
+    --card-gap: clamp(1rem, 3vw, 2rem);
+}
+
+body.theme-dark {
+    --background-color: #282828;
+    --text-color: #f4f4f4;
+    --accent-color: #31d8c6;
+    --link-hover-color: #ff5c9b;
+    --surface-color: #333333;
+    --border-color: rgba(244, 244, 244, 0.18);
+}
+
+body.theme-light {
+    --background-color: #f4f1ec;
+    --text-color: #1d1d1d;
+    --accent-color: #00796f;
+    --link-hover-color: #b0004f;
+    --surface-color: #e4e0d8;
+    --border-color: rgba(29, 29, 29, 0.18);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: "Science Gothic", "Quantico", Arial, sans-serif;
+    line-height: 1.55;
+    transition: background-color 0.25s, color 0.25s;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.15;
+}
+
+h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    margin-bottom: 0.4rem;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+h3 {
+    font-size: clamp(1.25rem, 3vw, 1.8rem);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.18em;
+    transition: color 0.2s;
+}
+
+a:visited {
+    color: var(--accent-color);
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--link-hover-color);
+}
+
+.site-header,
+main,
+footer {
+    width: var(--page-width);
+    margin-inline: auto;
+}
+
+/* Header */
+
+.site-header {
+    padding-block: clamp(2rem, 6vw, 4rem) clamp(2rem, 5vw, 3.5rem);
+}
+
+.site-header h1 {
+    text-align: center;
+}
+
+.site-header > h2 {
+    text-align: center;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Color scheme button */
+
+.color-mode-toggle {
+    display: block;
+    width: fit-content;
+    margin: 0;
+    padding: 0.75rem 1.25rem;
+    border: 0.125rem solid var(--accent-color);
+    border-radius: 999px;
+    background-color: transparent;
+    color: var(--accent-color);
+    font-family: inherit;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.color-mode-toggle:hover,
+.color-mode-toggle:focus-visible {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    transform: translateY(-2px);
+}
+
+/* Main layout */
+
+main {
+    display: grid;
+    gap: var(--section-gap);
+}
+
+.game-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--card-gap);
+}
+
+.game-video-section {
+    display: grid;
+    gap: 1rem;
+}
+
+.game-video-section h2,
+.game-card > h2 {
+    margin-bottom: 0;
+}
+
+.game-video {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background-color: var(--surface-color);
+    border: 0.125rem solid var(--border-color);
+}
+
+.game-card > h2 a {
+    display: inline-block;
+    font-size: clamp(1.75rem, 5vw, 3rem);
+    font-weight: 800;
+}
+
+article {
+    background-color: var(--surface-color);
+    border: 0.125rem solid var(--border-color);
+    padding: clamp(1rem, 3vw, 2rem);
+}
+
+article p {
+    margin-bottom: 0.6rem;
+}
+
+article p:last-child {
+    margin-bottom: 0;
+}
+
+strong {
+    font-weight: 800;
+}
+
+/* Footer */
+
+footer {
+    width: var(--page-width);
+    margin: clamp(4rem, 8vw, 7rem) auto 0;
+    padding-bottom: 3rem;
+    display: grid;
+    gap: 2rem;
+}
+
+footer h2 {
+    margin: 0;
+}
+
+.logo svg {
+    width: clamp(4rem, 10vw, 8rem);
+    height: auto;
+    fill: var(--text-color);
+    transition: fill 0.2s;
+}
+
+.logo:hover svg {
+    fill: var(--accent-color);
+}
+
+/* Desktop layout */
+
+@media (min-width: 64rem) {
+    .game-card {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+        grid-template-areas:
+            "video intro-link"
+            "video article"
+            "section-title article";
+        column-gap: clamp(2rem, 5vw, 5rem);
+        row-gap: 1.5rem;
+        align-items: start;
+    }
+
+    .game-video-section {
+        grid-area: video;
+    }
+
+    .game-card > h2:nth-of-type(1) {
+        grid-area: intro-link;
+    }
+
+    .game-card > h2:nth-of-type(2) {
+        grid-area: section-title;
+    }
+
+    .game-card article {
+        grid-area: article;
+    }
+}
+
+/* Larger desktop spacing */
+
+@media (min-width: 90rem) {
+    :root {
+        --page-width: min(100% - 4rem, 86rem);
+    }
+}
+
+/* User preferred color scheme fallback */
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --background-color: #f4f1ec;
+        --text-color: #1d1d1d;
+        --accent-color: #00796f;
+        --link-hover-color: #b0004f;
+        --surface-color: #e4e0d8;
+        --border-color: rgba(29, 29, 29, 0.18);
+    }
+}
